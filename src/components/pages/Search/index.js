@@ -6,7 +6,7 @@ import { SearchIcon } from '../../atoms/Icons';
 import {} from './styles';
 
 const Search = () => {
-  return <SearchIcon />;
+  return <h1>Teste font</h1>;
 };
 
 Search.defaultProps = {};

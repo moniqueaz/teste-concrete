@@ -26,5 +26,7 @@ body, input, button{
 
 button{
   cursor: pointer;
+  border: 0;
+  border-radius: 0;
 }
 `;

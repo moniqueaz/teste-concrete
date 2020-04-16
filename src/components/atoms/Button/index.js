@@ -15,17 +15,17 @@ const Button = ({ children, color, size, text, type }) => {
 };
 
 Button.defaultProps = {
+  type: 'button',
+  color: '#ac53f2',
+  size: 'normal',
+  text: '',
+};
+
+Button.propTypes = {
   type: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string,
   text: PropTypes.string,
-};
-
-Button.propTypes = {
-  type: 'button',
-  color: '##ac53f2',
-  size: 'normal',
-  text: '',
 };
 
 export default Button;
