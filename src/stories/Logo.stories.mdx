@@ -1,0 +1,30 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Logo from '../components/atoms/Logo';
+
+<Meta title="Atoms/Logo" component={Logo} />
+
+# Logo
+
+Documentação Atom Logo
+
+<Preview>
+  <Story name="default">
+    <>
+      <Logo />
+    </>
+  </Story>
+</Preview>
+
+## Logo sizes
+
+<Preview>
+  <Story name="sizes">
+    <>
+      <Logo size='small'/>
+      <br/><br/>
+      <Logo size='normal'/>
+      <br/><br/>
+      <Logo size='large'/>
+    </>
+  </Story>
+</Preview>
