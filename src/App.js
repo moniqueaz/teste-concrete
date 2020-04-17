@@ -7,10 +7,10 @@ import Default from './components/templates/Default';
 function App() {
   return (
     <>
+      <GlobalStyle />
       <Default>
         <Routes />
       </Default>
-      <GlobalStyle />
     </>
   );
 }

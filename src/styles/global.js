@@ -1,6 +1,22 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes, css } from 'styled-components';
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export default createGlobalStyle`
+
+@font-face {
+  font-family: 'Monaco';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Monaco'), url('Monaco.woff') format('woff');
+}
 
 *{
   margin: 0;
@@ -26,5 +42,12 @@ body, input, button{
 
 button{
   cursor: pointer;
+  border: 0;
+  border-radius: 0;
 }
+
+.loop {
+  animation: ${rotate} 1s linear infinite;
+}
+
 `;
