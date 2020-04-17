@@ -1,5 +1,8 @@
 import styled, { keyframes, css } from 'styled-components';
 
 export const ContainerButton = styled.button`
-  background-color: ${props => props.color};
+  width: 100px;
+  height: 50px;
+  color: ${props => props.color}
+  background-color: ${props => props.bgColor};
 `;

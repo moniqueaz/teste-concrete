@@ -1,5 +1,6 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import Button from '../components/atoms/Button';
+import { SearchIcon } from '../components/atoms/Icons';
 
 <Meta title="Atoms|Button" component={Button} />
 
@@ -9,6 +10,38 @@ Documentação Atom Button
 
 <Preview>
   <Story name="default">
-    <Button>Teste</Button>
+    <Button>Texto</Button>
+  </Story>
+</Preview>
+
+## Button with icon
+
+<Preview>
+  <Story name="button icon">
+    <Button>
+      <SearchIcon />
+    </Button>
+  </Story>
+</Preview>
+
+## Button colors
+
+<Preview>
+  <Story name="button color">
+    <Button color="#5c5c5c" bgColor="#ccc">
+      Text Color and button color
+    </Button>
+  </Story>
+</Preview>
+
+## Button size
+
+<Preview>
+  <Story name="button size">
+    <>
+      <Button>small</Button>
+      <Button>normal</Button>
+      <Button>large</Button>
+    </>
   </Story>
 </Preview>
