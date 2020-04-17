@@ -1,7 +1,12 @@
 import styled, { keyframes, css } from 'styled-components';
 
 export const Component = styled.button`
-  width: 100px;
+  width: ${props =>
+    props.size === 'small'
+      ? '50px'
+      : props.size === 'normal'
+      ? '100px'
+      : '150px'};
   height: 50px;
   color: ${props => props.color}
   background-color: ${props => props.bgColor};
