@@ -6,7 +6,13 @@ import { SearchIcon } from '../../atoms/Icons';
 
 import { Container } from './styles';
 
-const Search = ({ buttonSize, placeholder, value }) => {
+const Search = ({ buttonSize, placeholder, value, onSearch }) => {
+  const [inputValue, setInputValue] = useState(value);
+
+  const handleButton = () => {
+    onSearch(inputValue);
+  };
+
   return (
     <Container>
       <Input
@@ -14,16 +20,21 @@ const Search = ({ buttonSize, placeholder, value }) => {
         type="text"
         placeholder={placeholder}
         border={false}
+        onChangeValue={setInputValue}
       />
-      <Button size={buttonSize}>
+      <Button size={buttonSize} onClickButton={handleButton}>
         <SearchIcon />
       </Button>
     </Container>
   );
 };
 
-Search.defaultProps = {};
+Search.defaultProps = {
+  onSearch: () => undefined,
+};
 
-Search.propTypes = {};
+Search.propTypes = {
+  onSearch: PropTypes.func,
+};
 
 export default Search;

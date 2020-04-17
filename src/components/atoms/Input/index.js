@@ -7,7 +7,7 @@ const Input = ({ type, value, placeholder, border, onChangeValue }) => {
   const [val, setVal] = useState(value);
 
   useEffect(() => {
-    onChangeValue();
+    onChangeValue(val);
   }, [val]);
 
   return (
