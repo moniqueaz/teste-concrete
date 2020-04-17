@@ -1,0 +1,30 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Title from '../components/atoms/Title';
+
+<Meta title="Atoms/Title" component={Title} />
+
+# Title
+
+Documentação Atom Title
+
+<Preview>
+  <Story name="default">
+    <Title text='Component Titulo'/>
+  </Story>
+</Preview>
+
+## Colors
+
+<Preview>
+  <Story name="colors">
+    <>
+      <Title text='Component Titulo'/>
+      <br />
+      <br />
+      <Title color='#000'text='Component Titulo'/>
+      <br />
+      <br />
+      <Title color='red'text='Component Titulo'/>
+    </>
+  </Story>
+</Preview>
