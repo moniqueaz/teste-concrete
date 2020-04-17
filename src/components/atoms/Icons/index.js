@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import search from '../../../assets/icons/search.svg';
 import star from '../../../assets/icons/star.svg';

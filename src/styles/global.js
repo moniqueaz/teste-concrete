@@ -2,6 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 
+@font-face {
+  font-family: 'Monaco';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Monaco'), url('Monaco.woff') format('woff');
+}
+
 *{
   margin: 0;
   padding: 0;
