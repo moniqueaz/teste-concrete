@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { Component } from './styles';
 
-const Input = ({ type, value, placeholder, border }) => {
+const Input = ({ type, value, placeholder, border, onChangeValue }) => {
+  const [val, setVal] = useState(value);
+
+  useEffect(() => {
+    onChangeValue();
+  }, [val]);
+
   return (
     <Component
-      value={value}
+      value={val}
       type={type}
       placeholder={placeholder}
       border={border}
+      onChange={e => setVal(e.target.value)}
     />
   );
 };
@@ -19,6 +26,7 @@ Input.defaultProps = {
   value: '',
   placeholder: '',
   border: true,
+  onChangeValue: () => undefined,
 };
 
 Input.propTypes = {
@@ -26,6 +34,7 @@ Input.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   border: PropTypes.string,
+  onChangeValue: PropTypes.func,
 };
 
 export default Input;
