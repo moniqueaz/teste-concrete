@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const ContainerLogo = styled.div`
+export const Container = styled.div`
   font-style: italic;
   font-weight: 300;
   font-size: ${props =>

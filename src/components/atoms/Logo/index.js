@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ContainerLogo } from './styles';
+import { Container } from './styles';
 
 const Logo = ({ size }) => {
   return (
-    <ContainerLogo size={size}>
+    <Container size={size}>
       <span>GitHub</span>
       Search
-    </ContainerLogo>
+    </Container>
   );
 };
 

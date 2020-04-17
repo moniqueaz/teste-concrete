@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ContainerButton } from './styles';
+import { Component } from './styles';
 
 const Button = ({ children, color, size, type, bgColor }) => {
   return (
-    <ContainerButton color={color} size={size} type={type} bgColor={bgColor}>
+    <Component color={color} size={size} type={type} bgColor={bgColor}>
       {children}
-    </ContainerButton>
+    </Component>
   );
 };
 
