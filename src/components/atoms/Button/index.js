@@ -19,6 +19,7 @@ const Button = ({
       type={type}
       bgColor={bgColor}
       onClick={() => onClickButton()}
+      loader={loader}
     >
       {children}
     </Component>

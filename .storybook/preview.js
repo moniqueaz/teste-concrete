@@ -1,7 +1,7 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import GlobalStyle from '../src/styles/global';
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
+// import { configureViewport } from '@storybook/addon-viewport';
 
 const newViewports = {
   mobile: {
@@ -25,7 +25,7 @@ const newViewports = {
       height: '800px',
     },
   },
-  Desktop: {
+  desktop: {
     name: 'Desktop',
     styles: {
       width: '1360px',
@@ -45,8 +45,7 @@ const Container = ({ children }) => <div style={styles}>{children}</div>;
 
 addParameters({
   viewport: {
-    viewports: newViewports, // newViewports would be an ViewportMap. (see below for examples)
-    defaultViewport: 'someDefault',
+    viewports: newViewports,
   },
 });
 

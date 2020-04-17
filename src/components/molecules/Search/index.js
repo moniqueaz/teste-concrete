@@ -3,38 +3,49 @@ import PropTypes from 'prop-types';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
 import { SearchIcon } from '../../atoms/Icons';
+import { FaSpinner } from 'react-icons/fa';
 
-import { Container } from './styles';
+import { Form } from './styles';
 
-const Search = ({ buttonSize, placeholder, value, onSearch }) => {
+const Search = ({ buttonSize, placeholder, value, submitForm, loader }) => {
   const [inputValue, setInputValue] = useState(value);
 
-  const handleButton = () => {
-    onSearch(inputValue);
+  const handleSubmit = e => {
+    e.preventDefault();
+    submitForm(inputValue);
   };
 
   return (
-    <Container>
+    <Form onSubmit={e => handleSubmit(e)}>
       <Input
         value={value}
         type="text"
         placeholder={placeholder}
         border={false}
         onChangeValue={setInputValue}
+        required={true}
       />
-      <Button size={buttonSize} onClickButton={handleButton}>
-        <SearchIcon />
+      <Button size={buttonSize} loader={loader} type="submit">
+        {loader ? (
+          <div className="loop">
+            <FaSpinner />
+          </div>
+        ) : (
+          <SearchIcon />
+        )}
       </Button>
-    </Container>
+    </Form>
   );
 };
 
 Search.defaultProps = {
-  onSearch: () => undefined,
+  submitForm: () => undefined,
+  loader: false,
 };
 
 Search.propTypes = {
-  onSearch: PropTypes.func,
+  submitForm: PropTypes.func,
+  loader: PropTypes.bool,
 };
 
 export default Search;

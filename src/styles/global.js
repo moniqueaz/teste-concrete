@@ -1,4 +1,13 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes, css } from 'styled-components';
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export default createGlobalStyle`
 
@@ -36,4 +45,9 @@ button{
   border: 0;
   border-radius: 0;
 }
+
+.loop {
+  animation: ${rotate} 1s linear infinite;
+}
+
 `;
