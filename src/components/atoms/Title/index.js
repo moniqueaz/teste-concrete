@@ -6,7 +6,7 @@ import { TitleContainer } from './styles';
 const Title = ({ tag, text, color, link }) => {
   const Tag = tag;
   return (
-    <TitleContainer color={link ? '#ac53f2' : color}>
+    <TitleContainer color={color}>
       {link ? (
         <a href={link}>
           <Tag>{text}</Tag>
