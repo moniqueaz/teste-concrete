@@ -1,28 +1,22 @@
 import styled, { keyframes, css } from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-
-  align-items: center;
-
-  @media (min-width: 768px) {
-    flex-direction: ${props =>
-      props.orientation === 'vertical' ? 'column' : 'row'};
+export const WrapperStyle = styled.div`
+  .user {
+    &__image {
+      margin-bottom: 12px;
+    }
+    &__title {
+      margin-bottom: 7px;
+    }
   }
+`;
 
-  .search-area {
-    &__logo {
-      line-height: 81px;
-      @media (min-width: 768px) {
-        ${props =>
-          props.orientation === 'vertical'
-            ? 'line-height: 81px;'
-            : 'line-height: 50px; margin-right: 70px'}
-      }
-    }
-    &__search {
-    }
+export const List = styled.ul`
+  margin-top: 28px;
+`;
+
+export const ListItem = styled.li`
+  & + li {
+    margin-top: 7px;
   }
 `;

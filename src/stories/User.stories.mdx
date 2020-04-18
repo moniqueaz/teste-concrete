@@ -1,0 +1,52 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import User from '../components/organisms/User';
+
+<Meta title="Organisms/User" component={User} />
+
+# User
+
+Documentação Atom User
+
+<Preview>
+  <Story name="default">
+    <User
+      data={{
+        login: 'moniqueaz',
+        id: 8385229,
+        node_id: 'MDQ6VXNlcjgzODUyMjk=',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/8385229?v=4',
+        gravatar_id: '',
+        url: 'https://api.github.com/users/moniqueaz',
+        html_url: 'https://github.com/moniqueaz',
+        followers_url: 'https://api.github.com/users/moniqueaz/followers',
+        following_url:
+          'https://api.github.com/users/moniqueaz/following{/other_user}',
+        gists_url: 'https://api.github.com/users/moniqueaz/gists{/gist_id}',
+        starred_url:
+          'https://api.github.com/users/moniqueaz/starred{/owner}{/repo}',
+        subscriptions_url:
+          'https://api.github.com/users/moniqueaz/subscriptions',
+        organizations_url: 'https://api.github.com/users/moniqueaz/orgs',
+        repos_url: 'https://api.github.com/users/moniqueaz/repos',
+        events_url: 'https://api.github.com/users/moniqueaz/events{/privacy}',
+        received_events_url:
+          'https://api.github.com/users/moniqueaz/received_events',
+        type: 'User',
+        site_admin: false,
+        name: 'Monique Az',
+        company: 'The Galactic Empire',
+        blog: '',
+        location: 'Tatooine',
+        email: null,
+        hireable: null,
+        bio: null,
+        public_repos: 37,
+        public_gists: 0,
+        followers: 11,
+        following: 3,
+        created_at: '2014-08-07T13:23:37Z',
+        updated_at: '2020-04-17T23:16:44Z',
+      }}
+    />
+  </Story>
+</Preview>
