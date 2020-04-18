@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { SearchIcon } from '../../atoms/Icons';
+import { BrowserRouter } from 'react-router-dom';
 import SearchArea from '../../organisms/SearchArea';
-import Default from '../../templates/Default';
+import api from '../../../services/api';
 
 import { Container } from './styles';
 
 const Search = () => {
+  const [value, setValue] = useState('');
+
+  const searchUser = async name => {
+    const result = await api.get(`/users/${name}`);
+  };
+
+  useEffect(() => {
+    searchUser(value);
+  }, [value]);
+
   return (
-    <Default>
-      <Container className="search">
-        <SearchArea orientation="vertical" className="search-area" />
-      </Container>
-    </Default>
+    <Container className="search">
+      <SearchArea
+        orientation="vertical"
+        className="search-area"
+        onSearch={setValue}
+      />
+    </Container>
   );
 };
-
-Search.defaultProps = {};
-
-Search.propTypes = {};
 
 export default Search;

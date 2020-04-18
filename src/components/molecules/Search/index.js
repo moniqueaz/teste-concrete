@@ -7,12 +7,12 @@ import { FaSpinner } from 'react-icons/fa';
 
 import { Form } from './styles';
 
-const Search = ({ buttonSize, placeholder, value, submitForm, loader }) => {
+const Search = ({ buttonSize, placeholder, value, onSearch, loader }) => {
   const [inputValue, setInputValue] = useState(value);
 
   const handleSubmit = e => {
     e.preventDefault();
-    submitForm(inputValue);
+    onSearch(inputValue);
   };
 
   return (
@@ -39,12 +39,12 @@ const Search = ({ buttonSize, placeholder, value, submitForm, loader }) => {
 };
 
 Search.defaultProps = {
-  submitForm: () => undefined,
+  onSearch: () => undefined,
   loader: false,
 };
 
 Search.propTypes = {
-  submitForm: PropTypes.func,
+  onSearch: PropTypes.func,
   loader: PropTypes.bool,
 };
 

@@ -17,7 +17,7 @@ const SearchArea = ({ orientation, loader, onSearch }) => {
       <div className="search-area__logo">
         <Logo size="large" />
       </div>
-      <Search submitForm={setValue} loader={loader} />
+      <Search onSearch={setValue} loader={loader} />
     </Container>
   );
 };

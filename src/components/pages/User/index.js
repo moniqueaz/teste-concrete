@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import User from '../../organisms/User';
-import List from '../../organisms/List';
 
 import { Content, Section } from './styles';
 
-const Repos = ({ data }) => {
+const User = ({ data }) => {
   return (
     <Content>
       <Section>
-        <List />
+        <User />
       </Section>
     </Content>
   );
 };
 
-Repos.defaultProps = {};
+User.defaultProps = {};
 
-Repos.propTypes = {};
+User.propTypes = {};
 
-export default Repos;
+export default User;

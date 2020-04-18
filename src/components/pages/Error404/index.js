@@ -7,11 +7,9 @@ import { Content, Title } from './styles';
 
 const Error404 = ({}) => {
   return (
-    <HeaderSearch onSearch={() => undefined}>
-      <Content>
-        <Title>User not found :(</Title>
-      </Content>
-    </HeaderSearch>
+    <Content>
+      <Title>User not found :(</Title>
+    </Content>
   );
 };
 

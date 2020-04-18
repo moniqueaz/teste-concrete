@@ -1,24 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import HeaderSearch from '../../templates/HeaderSearch';
+import { Switch, BrowserRouter as Route } from 'react-router-dom';
 import User from '../../organisms/User';
 import List from '../../organisms/List';
+import Error from '../Error404';
+import SearchArea from '../../organisms/SearchArea';
 
-import { Content, SectionLeft, SectionRight } from './styles';
+import { Content, SectionLeft, SectionRight, Header } from './styles';
 
 const Result = () => {
   return (
-    <HeaderSearch onSearch={() => undefined}>
-      <Content>
-        <SectionLeft>
-          <User />
-        </SectionLeft>
-        <SectionRight>
-          <List />
-        </SectionRight>
-      </Content>
-    </HeaderSearch>
+    <>
+      <Header>
+        <SearchArea />
+      </Header>
+      <Switch>
+        <Route path="/user/:user">
+          <Content>
+            <SectionLeft>
+              <User />
+            </SectionLeft>
+            <SectionRight>
+              <List />
+            </SectionRight>
+          </Content>
+        </Route>
+        <Route path="/error">
+          <Error />
+        </Route>
+      </Switch>
+    </>
   );
 };
 
