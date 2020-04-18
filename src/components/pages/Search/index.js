@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import SearchArea from '../../organisms/SearchArea';
 import api from '../../../services/api';
+import Logo from '../../atoms/Logo';
+import SearchForm from '../../molecules/Search';
 
 import { Container } from './styles';
 
@@ -18,11 +20,8 @@ const Search = () => {
 
   return (
     <Container className="search">
-      <SearchArea
-        orientation="vertical"
-        className="search-area"
-        onSearch={setValue}
-      />
+      <Logo size="large" />
+      <SearchForm onSearch={setValue} />
     </Container>
   );
 };

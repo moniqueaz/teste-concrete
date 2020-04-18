@@ -5,31 +5,38 @@ import User from '../../organisms/User';
 import List from '../../organisms/List';
 import Error from '../Error404';
 import SearchArea from '../../organisms/SearchArea';
+import Logo from '../../atoms/Logo';
+import SearchForm from '../../molecules/Search';
 
-import { Content, SectionLeft, SectionRight, Header } from './styles';
+import { Content, Section, Header, Container } from './styles';
 
 const Result = () => {
+  const [value, setValue] = useState('');
   return (
-    <>
+    <Container>
       <Header>
-        <SearchArea />
+        <Logo size="normal" />
+        <div className="header__search">
+          <SearchForm onSearch={setValue} />
+        </div>
       </Header>
       <Switch>
         <Route path="/user/:user">
           <Content>
-            <SectionLeft>
+            <Section>
               <User />
-            </SectionLeft>
-            <SectionRight>
+            </Section>
+            <Section>
+              <h1>List</h1>
               <List />
-            </SectionRight>
+            </Section>
           </Content>
         </Route>
         <Route path="/error">
           <Error />
         </Route>
       </Switch>
-    </>
+    </Container>
   );
 };
 

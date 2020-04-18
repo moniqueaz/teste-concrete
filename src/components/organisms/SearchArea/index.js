@@ -5,7 +5,7 @@ import Search from '../../molecules/Search';
 
 import { Container } from './styles';
 
-const SearchArea = ({ orientation, loader, onSearch }) => {
+const SearchArea = ({ orientation, loader, onSearch, logoSize }) => {
   const [value, setValue] = useState('');
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const SearchArea = ({ orientation, loader, onSearch }) => {
   return (
     <Container orientation={orientation} className="search-area">
       <div className="search-area__logo">
-        <Logo size="large" />
+        <Logo size={logoSize} />
       </div>
       <Search onSearch={setValue} loader={loader} />
     </Container>
@@ -25,11 +25,13 @@ const SearchArea = ({ orientation, loader, onSearch }) => {
 SearchArea.defaultProps = {
   orientation: 'horizontal',
   onSearch: () => undefined,
+  logoSize: 'normal',
 };
 
 SearchArea.propTypes = {
   onSearch: PropTypes.func,
   orientation: PropTypes.string,
+  logoSize: PropTypes.string,
 };
 
 export default SearchArea;

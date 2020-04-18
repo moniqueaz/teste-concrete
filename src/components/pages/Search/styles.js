@@ -4,16 +4,15 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   padding: 10px;
-  max-width: 650px;
-  height: 100vh;
+  max-width: 750px;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
 
-  .search-area {
-    margin-bottom: 50%;
-
-    @media (min-width: 1024px) {
-      margin-bottom: 0;
-    }
+  @media (min-width: 1024px) {
+    top: 50%;
   }
 `;
