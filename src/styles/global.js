@@ -1,4 +1,6 @@
+import React from 'react';
 import { createGlobalStyle, keyframes, css } from 'styled-components';
+import Monaco from '../assets/fonts/Monaco.woff';
 
 const rotate = keyframes`
   0% {
@@ -15,7 +17,7 @@ export default createGlobalStyle`
   font-family: 'Monaco';
   font-style: normal;
   font-weight: normal;
-  src: local('Monaco'), url('Monaco.woff') format('woff');
+  src: local('Monaco'), url(${Monaco}) format('woff');
 }
 
 *{
