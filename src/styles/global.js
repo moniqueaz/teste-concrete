@@ -32,11 +32,12 @@ html, body, #root{
 body{
   background-color: #fff;
   -webkit-font-smoothing: antialiased !important;
+  font-size: 20px;
 }
 
 body, input, button{
   color: #000;
-  font-size: 14px;
+  font-size: 20px;
   font-family: 'Raleway', sans-serif;
 }
 
