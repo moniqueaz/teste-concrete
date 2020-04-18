@@ -1,0 +1,33 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import IconText from '../components/molecules/IconText';
+import { StarIcon } from '../components/atoms/Icons';
+
+<Meta title="Molecules/IconText" component={IconText} />
+
+# IconText
+
+Documentação Atom IconText
+
+<Preview>
+  <Story name="default">
+    <IconText text="Text Component">
+      <StarIcon/>
+    </IconText>
+  </Story>
+</Preview>
+
+## Align
+
+<Preview>
+  <Story name="Align">
+    <>
+    <IconText text="Text Component">
+      <StarIcon/>
+    </IconText>
+    <br/><br/>
+    <IconText text="Text Component" alignIcon="right">
+      <StarIcon/>
+    </IconText>
+    </>
+  </Story>
+</Preview>
