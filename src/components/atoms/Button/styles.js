@@ -11,6 +11,9 @@ export const Component = styled.button`
   color: ${props => props.color}
   background-color: ${props => props.bgColor};
   transition: all .1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:active{
     opacity: .8;
