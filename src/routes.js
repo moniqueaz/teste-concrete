@@ -11,8 +11,8 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Search} />
-        <Route path="/users/:user" component={Result} />
-        <Route path="/users/:user/repos" component={Repos} />
+        <Route path="/user/:user" component={Result} />
+        <Route path="/user/:user/repos" component={Repos} />
         <Route path="/error" component={Error404} />
       </Switch>
     </BrowserRouter>

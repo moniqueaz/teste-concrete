@@ -14,43 +14,57 @@ import {
 import { WrapperStyle, List, ListItem } from './styles';
 
 const User = ({ data, stars, repositories }) => {
-  const { avatar_url, followers, name, location, login, company } = data;
+  const {
+    avatar_url,
+    followers,
+    name,
+    location,
+    login,
+    company,
+    node_id,
+  } = data;
   return (
     <WrapperStyle className="user">
-      <div className="user__image">
-        <Image src={avatar_url} />
-      </div>
-      <div className="user__title">
-        <Title text={name} />
-      </div>
-      <IconText text={login} />
-      <List>
-        <ListItem>
-          <IconText text={company}>
-            <OrganizationIcon />
-          </IconText>
-        </ListItem>
-        <ListItem>
-          <IconText text={location}>
-            <LocationIcon />
-          </IconText>
-        </ListItem>
-        <ListItem>
-          <IconText text={stars}>
-            <StarIcon />
-          </IconText>
-        </ListItem>
-        <ListItem>
-          <IconText text={repositories}>
-            <RepositorieIcon />
-          </IconText>
-        </ListItem>
-        <ListItem>
-          <IconText text={followers}>
-            <FollowersIcon />
-          </IconText>
-        </ListItem>
-      </List>
+      {node_id ? (
+        <div>error</div>
+      ) : (
+        <>
+          <div className="user__image">
+            <Image src={avatar_url} />
+          </div>
+          <div className="user__title">
+            <Title text={name} />
+          </div>
+          <IconText text={login} />
+          <List>
+            <ListItem>
+              <IconText text={company}>
+                <OrganizationIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={location}>
+                <LocationIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={stars}>
+                <StarIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={repositories}>
+                <RepositorieIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={followers}>
+                <FollowersIcon />
+              </IconText>
+            </ListItem>
+          </List>
+        </>
+      )}
     </WrapperStyle>
   );
 };
