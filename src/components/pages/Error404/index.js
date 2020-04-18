@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import HeaderSearch from '../../templates/HeaderSearch';
 
-import {} from './styles';
+import { Content, Title } from './styles';
 
-const Error404 = () => {
-  return <h1>Error404</h1>;
+const Error404 = ({}) => {
+  return (
+    <HeaderSearch onSearch={() => undefined}>
+      <Content>
+        <Title>User not found :(</Title>
+      </Content>
+    </HeaderSearch>
+  );
 };
 
 Error404.defaultProps = {};

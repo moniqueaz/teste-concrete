@@ -14,20 +14,27 @@ const List = ({ data }) => {
   return (
     <WrapperStyle>
       <Block>
-        {data.map(items => {
-          const { name, html_url, description, stargazers_count } = items;
-          return (
-            <Item>
-              <Title text={ajustTex(name)} link={html_url} />
-              <Text>{description}</Text>
-              <Star>
-                <IconText text={stargazers_count}>
-                  <StarIcon />
-                </IconText>
-              </Star>
-            </Item>
-          );
-        })}
+        {data.langht &&
+          data.map(items => {
+            const {
+              name,
+              html_url,
+              description,
+              stargazers_count,
+              node_id,
+            } = items;
+            return (
+              <Item key={node_id}>
+                <Title text={ajustTex(name)} link={html_url} />
+                <Text>{description}</Text>
+                <Star>
+                  <IconText text={stargazers_count}>
+                    <StarIcon />
+                  </IconText>
+                </Star>
+              </Item>
+            );
+          })}
       </Block>
     </WrapperStyle>
   );
