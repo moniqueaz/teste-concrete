@@ -40,6 +40,10 @@ body, input, button{
   font-family: 'Raleway', sans-serif;
 }
 
+li{
+  list-style: none;
+}
+
 button{
   cursor: pointer;
   border: 0;
