@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import User from '../../organisms/User';
+import api from '../../../services/api';
 
 import { Content, Section } from './styles';
 
-const User = ({ data }) => {
+const UserPage = ({ data }) => {
+  const [user, setUser] = useState({});
+
+  const getUser = async value => {
+    const result = await api.get(`/users/${value}`);
+    console.log('result: ', result);
+  };
+
+  useEffect(() => {
+    getUser(data);
+  }, [data]);
+
   return (
     <Content>
       <Section>
@@ -14,8 +26,8 @@ const User = ({ data }) => {
   );
 };
 
-User.defaultProps = {};
+UserPage.defaultProps = {};
 
-User.propTypes = {};
+UserPage.propTypes = {};
 
-export default User;
+export default UserPage;

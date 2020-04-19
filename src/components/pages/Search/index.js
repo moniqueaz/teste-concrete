@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import SearchArea from '../../organisms/SearchArea';
-import api from '../../../services/api';
+import { useHistory } from 'react-router-dom';
 import Logo from '../../atoms/Logo';
 import SearchForm from '../../molecules/Search';
 
 import { Container } from './styles';
 
 const Search = () => {
-  const [value, setValue] = useState('');
+  const location = useHistory();
 
-  const searchUser = async name => {
-    const result = await api.get(`/users/${name}`);
+  const redirect = name => {
+    location.push(`/user/${encodeURIComponent(name)}`);
   };
 
-  useEffect(() => {
-    searchUser(value);
-  }, [value]);
+  const handleSearch = name => {
+    redirect(name);
+  };
 
   return (
     <Container className="search">
       <Logo size="large" />
-      <SearchForm onSearch={setValue} />
+      <SearchForm onSearch={handleSearch} />
     </Container>
   );
 };
