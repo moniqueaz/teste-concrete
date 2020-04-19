@@ -14,7 +14,7 @@ const List = ({ data }) => {
   return (
     <WrapperStyle>
       <Block>
-        {data.langht &&
+        {data.length &&
           data.map(items => {
             const {
               name,
@@ -41,11 +41,11 @@ const List = ({ data }) => {
 };
 
 List.defaultProps = {
-  data: {},
+  data: [],
 };
 
 List.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };
 
 export default List;
