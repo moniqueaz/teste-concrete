@@ -3,6 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 export const Container = styled.div`
   font-style: italic;
   font-weight: 300;
+  line-height: 81px;
   font-size: ${props =>
     props.size === 'large'
       ? '40px'

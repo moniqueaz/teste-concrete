@@ -13,6 +13,16 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   margin-bottom: 53px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header {
+    &__search {
+      max-width: 750px;
+      flex: 0 1 100%;
+    }
+  }
 `;
 
 export const Content = styled.div``;

@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { SearchIcon } from '../../atoms/Icons';
-import SearchArea from '../../organisms/SearchArea';
+import { useHistory } from 'react-router-dom';
+import Logo from '../../atoms/Logo';
+import SearchForm from '../../molecules/Search';
 import Default from '../../templates/Default';
 
 import { Container } from './styles';
 
 const Search = () => {
+  const location = useHistory();
+
+  const redirect = name => {
+    location.push(`/user/${encodeURIComponent(name)}`);
+  };
+
+  const handleSearch = name => {
+    redirect(name);
+  };
+
   return (
     <Default>
       <Container className="search">
-        <SearchArea orientation="vertical" className="search-area" />
+        <Logo size="large" />
+        <SearchForm onSearch={handleSearch} />
       </Container>
     </Default>
   );
 };
-
-Search.defaultProps = {};
-
-Search.propTypes = {};
 
 export default Search;
