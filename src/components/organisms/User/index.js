@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../../atoms/Image';
 import Title from '../../atoms/Title';
@@ -13,7 +13,7 @@ import {
 
 import { WrapperStyle, List, ListItem } from './styles';
 
-const User = ({ data, stars, repositories }) => {
+const User = ({ data }) => {
   const {
     avatar_url,
     followers,
@@ -21,17 +21,17 @@ const User = ({ data, stars, repositories }) => {
     location,
     login,
     company,
-    node_id,
+    stars,
+    repositories,
   } = data;
+
   return (
     <WrapperStyle className="user">
-      {node_id ? (
-        <div>error</div>
-      ) : (
-        <>
-          <div className="user__image">
-            <Image src={avatar_url} />
-          </div>
+      <>
+        <div className="user__image">
+          <Image src={avatar_url} width="100%" height="100%" />
+        </div>
+        <div className="user__info">
           <div className="user__title">
             <Title text={name} />
           </div>
@@ -48,23 +48,23 @@ const User = ({ data, stars, repositories }) => {
               </IconText>
             </ListItem>
             <ListItem>
-              <IconText text={stars}>
+              <IconText text={String(stars)}>
                 <StarIcon />
               </IconText>
             </ListItem>
             <ListItem>
-              <IconText text={repositories}>
+              <IconText text={String(repositories)}>
                 <RepositorieIcon />
               </IconText>
             </ListItem>
             <ListItem>
-              <IconText text={followers}>
+              <IconText text={String(followers)}>
                 <FollowersIcon />
               </IconText>
             </ListItem>
           </List>
-        </>
-      )}
+        </div>
+      </>
     </WrapperStyle>
   );
 };

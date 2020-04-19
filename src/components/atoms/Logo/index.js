@@ -13,7 +13,7 @@ const Logo = ({ size }) => {
 };
 
 Logo.defaultProps = {
-  size: 'large',
+  size: 'normal',
 };
 
 Logo.propTypes = {
