@@ -33,39 +33,41 @@ const User = ({ data }) => {
     <WrapperStyle className="user">
       <>
         <div className="user__image">
-          <Image src={avatar_url} />
+          <Image src={avatar_url} width="100%" height="100%" />
         </div>
-        <div className="user__title">
-          <Title text={name} />
+        <div className="user__info">
+          <div className="user__title">
+            <Title text={name} />
+          </div>
+          <IconText text={login} />
+          <List>
+            <ListItem>
+              <IconText text={company}>
+                <OrganizationIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={location}>
+                <LocationIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={stars}>
+                <StarIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={repositories}>
+                <RepositorieIcon />
+              </IconText>
+            </ListItem>
+            <ListItem>
+              <IconText text={followers}>
+                <FollowersIcon />
+              </IconText>
+            </ListItem>
+          </List>
         </div>
-        <IconText text={login} />
-        <List>
-          <ListItem>
-            <IconText text={company}>
-              <OrganizationIcon />
-            </IconText>
-          </ListItem>
-          <ListItem>
-            <IconText text={location}>
-              <LocationIcon />
-            </IconText>
-          </ListItem>
-          <ListItem>
-            <IconText text={stars}>
-              <StarIcon />
-            </IconText>
-          </ListItem>
-          <ListItem>
-            <IconText text={repositories}>
-              <RepositorieIcon />
-            </IconText>
-          </ListItem>
-          <ListItem>
-            <IconText text={followers}>
-              <FollowersIcon />
-            </IconText>
-          </ListItem>
-        </List>
       </>
     </WrapperStyle>
   );

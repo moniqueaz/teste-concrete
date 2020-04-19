@@ -2,7 +2,7 @@ import styled, { keyframes, css } from 'styled-components';
 
 export const Img = styled.img`
   opacity: 0;
-  event-point: none;
+  pointer-events: none;
 `;
 
 export const ImageContainer = styled.div`
