@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 import {} from './styles';
 
-const Default = ({ children }) => {
-  return <div>{children}</div>;
+const Repos = () => {
+  return <h1>Repos</h1>;
 };
 
-Default.defaultProps = {};
+Repos.defaultProps = {};
 
-Default.propTypes = {};
+Repos.propTypes = {};
 
-export default Default;
+export default Repos;

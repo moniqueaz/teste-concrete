@@ -1,4 +1,5 @@
-import { createGlobalStyle, keyframes } from 'styled-components';
+import React from 'react';
+import { createGlobalStyle, keyframes, css } from 'styled-components';
 import Monaco from '../assets/fonts/Monaco.woff';
 
 const rotate = keyframes`

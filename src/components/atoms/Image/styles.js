@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const Img = styled.img`
   opacity: 0;
-  pointer-events: none;
+  event-point: none;
 `;
 
 export const ImageContainer = styled.div`

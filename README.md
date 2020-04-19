@@ -32,5 +32,3 @@ user_url: "https://api.github.com/users/{user}"
 user_organizations_url: "https://api.github.com/user/orgs"
 user_repositories_url: "https://api.github.com/users/{user}/repos{?type,page,per_page,sort}"
 user_search_url: "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
-
-http://localhost:3000/user/sdfsdfsd/repos

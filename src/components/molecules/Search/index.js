@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../../atoms/Input';
 import Button from '../../atoms/Button';
@@ -7,12 +7,12 @@ import { FaSpinner } from 'react-icons/fa';
 
 import { Form } from './styles';
 
-const Search = ({ buttonSize, placeholder, value, onSearch, loader }) => {
+const Search = ({ buttonSize, placeholder, value, submitForm, loader }) => {
   const [inputValue, setInputValue] = useState(value);
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSearch(inputValue);
+    submitForm(inputValue);
   };
 
   return (
@@ -39,12 +39,12 @@ const Search = ({ buttonSize, placeholder, value, onSearch, loader }) => {
 };
 
 Search.defaultProps = {
-  onSearch: () => undefined,
+  submitForm: () => undefined,
   loader: false,
 };
 
 Search.propTypes = {
-  onSearch: PropTypes.func,
+  submitForm: PropTypes.func,
   loader: PropTypes.bool,
 };
 

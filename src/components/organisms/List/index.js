@@ -14,7 +14,7 @@ const List = ({ data }) => {
   return (
     <WrapperStyle>
       <Block>
-        {data.length ? (
+        {data.langht &&
           data.map(items => {
             const {
               name,
@@ -28,27 +28,24 @@ const List = ({ data }) => {
                 <Title text={ajustTex(name)} link={html_url} />
                 <Text>{description}</Text>
                 <Star>
-                  <IconText text={String(stargazers_count)}>
+                  <IconText text={stargazers_count}>
                     <StarIcon />
                   </IconText>
                 </Star>
               </Item>
             );
-          })
-        ) : (
-          <div>Empty</div>
-        )}
+          })}
       </Block>
     </WrapperStyle>
   );
 };
 
 List.defaultProps = {
-  data: [],
+  data: {},
 };
 
 List.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
 };
 
 export default List;

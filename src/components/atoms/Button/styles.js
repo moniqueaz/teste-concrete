@@ -1,9 +1,6 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const Component = styled.button`
-  display: flex;
-  justify-content: center;
-  alighn-items: center;
   width: ${props =>
     props.size === 'small'
       ? '50px'
