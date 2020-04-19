@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Switch,
-  BrowserRouter as Route,
-  useHistory,
-  Link,
-} from 'react-router-dom';
+import { Switch, BrowserRouter as Route, useHistory } from 'react-router-dom';
 import User from '../../organisms/User';
 import List from '../../organisms/List';
 import api from '../../../services/api';
@@ -25,7 +19,7 @@ const Result = ({ match }) => {
   const { user } = match.params;
   const [value, setValue] = useState(user);
   const [userData, setUserData] = useState({});
-  const [reposData, setReposData] = useState({});
+  const [reposData, setReposData] = useState([]);
   const [loader, setLoader] = useState(true);
   const location = useHistory();
 
@@ -68,21 +62,15 @@ const Result = ({ match }) => {
   };
 
   useEffect(() => {
+    setLoader(true);
     value && mountInfor(value);
   }, [value]);
 
   useEffect(() => {
-    // console.log('userData: ', userData);
-  }, [userData]);
-
-  useEffect(() => {
-    // console.log('reposData: ', reposData);/
-  }, [reposData]);
-
-  useEffect(() => {
-    // console.log('loader: ', loader);
     if (!loader) {
       location.push(`/user/${value}/repos`);
+    } else {
+      location.push(`/user/${value}`);
     }
   }, [loader]);
 
@@ -115,9 +103,5 @@ const Result = ({ match }) => {
     </Container>
   );
 };
-
-Result.defaultProps = {};
-
-Result.propTypes = {};
 
 export default Result;

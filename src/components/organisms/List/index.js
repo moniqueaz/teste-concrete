@@ -14,7 +14,7 @@ const List = ({ data }) => {
   return (
     <WrapperStyle>
       <Block>
-        {data.length &&
+        {data.length ? (
           data.map(items => {
             const {
               name,
@@ -28,13 +28,16 @@ const List = ({ data }) => {
                 <Title text={ajustTex(name)} link={html_url} />
                 <Text>{description}</Text>
                 <Star>
-                  <IconText text={stargazers_count}>
+                  <IconText text={String(stargazers_count)}>
                     <StarIcon />
                   </IconText>
                 </Star>
               </Item>
             );
-          })}
+          })
+        ) : (
+          <div>Empty</div>
+        )}
       </Block>
     </WrapperStyle>
   );

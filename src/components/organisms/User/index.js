@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../../atoms/Image';
 import Title from '../../atoms/Title';
 import IconText from '../../molecules/IconText';
-import { useHistory } from 'react-router-dom';
 import {
   StarIcon,
   FollowersIcon,
@@ -22,12 +21,9 @@ const User = ({ data }) => {
     location,
     login,
     company,
-    node_id,
     stars,
     repositories,
   } = data;
-
-  useEffect(() => {}, []);
 
   return (
     <WrapperStyle className="user">
@@ -52,17 +48,17 @@ const User = ({ data }) => {
               </IconText>
             </ListItem>
             <ListItem>
-              <IconText text={stars}>
+              <IconText text={String(stars)}>
                 <StarIcon />
               </IconText>
             </ListItem>
             <ListItem>
-              <IconText text={repositories}>
+              <IconText text={String(repositories)}>
                 <RepositorieIcon />
               </IconText>
             </ListItem>
             <ListItem>
-              <IconText text={followers}>
+              <IconText text={String(followers)}>
                 <FollowersIcon />
               </IconText>
             </ListItem>
