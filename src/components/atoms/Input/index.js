@@ -13,6 +13,10 @@ const Input = ({
 }) => {
   const [val, setVal] = useState(value);
 
+  const handleChange = input => {
+    setVal(input);
+  };
+
   useEffect(() => {
     onChangeValue(val);
   }, [val]);
@@ -23,7 +27,7 @@ const Input = ({
       type={type}
       placeholder={placeholder}
       border={border}
-      onChange={e => setVal(e.target.value)}
+      onChange={e => handleChange(e.target.value)}
       required={required}
     />
   );
