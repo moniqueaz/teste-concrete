@@ -15,6 +15,10 @@ Documentação Atom Button
   </Story>
 </Preview>
 
+> Exemplo do componente sem nenhuma propriedade
+
+<br/>
+
 ### Propriedades
 
 <Props of={Button} />
@@ -31,15 +35,23 @@ Documentação Atom Button
   </Story>
 </Preview>
 
+> O componente Button aceita receber icones no corpo do componente.
+
+<br/>
+
 ## Button colors
 
 <Preview>
-  <Story name="button color">
+  <Story name="button colors">
     <Button color="#5c5c5c" bgColor="#ccc" size='large' >
       Text Color and button color
     </Button>
   </Story>
 </Preview>
+
+> O componente Button aceita receber valores para alterar a cor do texto e a cor de fundo do botão.>
+
+<br/>
 
 ## Button size
 
@@ -55,8 +67,18 @@ Documentação Atom Button
   </Story>
 </Preview>
 
+> O componente Button comporta 3 tamanhos diferentes que são setados atravez
+> da propriedade size.
+> Os valores disponiveis são `small`, `normal` e `large`.
+
+<br/>
+
 
 ### Playground
 <Story name="Knobs" parameters={{ decorators: [withKnobs] }}>
-  <Button>Playground</Button>
+  <Button
+    size={text('size', '')}
+    color={text('color', '')}
+    bgColor={text('bgColor', '')}
+  >Playground</Button>
 </Story>

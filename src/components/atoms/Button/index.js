@@ -31,16 +31,37 @@ Button.defaultProps = {
   color: '#fff',
   size: 'normal',
   bgColor: '#ac53f2',
-  onClickButton: () => undefined,
+  // onClickButton: () => undefined,
   loader: false,
 };
 
 Button.propTypes = {
+  /**
+   * Essa propriedade é responsavel por seta o type do button.
+   * Tipos mais comuns, `button` e `submit`.
+   */
   type: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar a cor de texto do button.
+   */
   color: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar o tamanho do button.
+   * Ela aceita parametros como `small`, `normal` e `large`.
+   */
   size: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar a cor de fundo do button.
+   */
   bgColor: PropTypes.string,
-  onClickButton: PropTypes.func,
+  /**
+   * Essa propriedade é responsavel por informar qual função será chamado ao executar
+   * o evento de click do button.
+   */
+  onClickButton: PropTypes.func.isRequired,
+  /**
+   * Essa propriedade é responsavel por setar o status de carregando do button.
+   */
   loader: PropTypes.bool,
 };
 
