@@ -1,6 +1,7 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Button from '../components/atoms/Button';
 import { SearchIcon } from '../components/atoms/Icons';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Button" component={Button} />
 
@@ -13,6 +14,12 @@ Documentação Atom Button
     <Button>Texto</Button>
   </Story>
 </Preview>
+
+### Propriedades
+
+<Props of={Button} />
+
+<br/><br/>
 
 ## Button with icon
 
@@ -28,7 +35,7 @@ Documentação Atom Button
 
 <Preview>
   <Story name="button color">
-    <Button color="#5c5c5c" bgColor="#ccc">
+    <Button color="#5c5c5c" bgColor="#ccc" size='large' >
       Text Color and button color
     </Button>
   </Story>
@@ -44,6 +51,12 @@ Documentação Atom Button
       <Button size='normal'>normal</Button>
       <br/><br/>
       <Button size='large'>large</Button>
-    </>
+    </>f
   </Story>
 </Preview>
+
+
+### Playground
+<Story name="Knobs" parameters={{ decorators: [withKnobs] }}>
+  <Button>Playground</Button>
+</Story>
