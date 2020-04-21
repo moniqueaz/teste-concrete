@@ -1,0 +1,32 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import GoTop from '../components/molecules/GoTop';
+import { SearchIcon } from '../components/atoms/Icons';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
+
+<Meta title="Molecules/GoTop" component={GoTop} />
+
+# Button
+
+Documentação Atom Button
+
+<Preview>
+  <Story name="default">
+    <GoTop />
+  </Story>
+</Preview>
+
+<br/>
+
+### Propriedades
+
+<Props of={GoTop} />
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <GoTop
+    show={boolean('show', true)}
+  />
+</Story>

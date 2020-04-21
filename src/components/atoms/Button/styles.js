@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Component = styled.button`
   display: flex;
   justify-content: center;
-  alighn-items: center;
+  align-items: center;
   width: ${props =>
     props.size === 'small'
       ? '50px'
@@ -14,6 +14,7 @@ export const Component = styled.button`
   color: ${props => props.color}
   background-color: ${props => props.bgColor};
   transition: all .1s;
+  position: relative;
 
   ${props =>
     props.disabled &&
