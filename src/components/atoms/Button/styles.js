@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Component = styled.button`
   display: flex;
   justify-content: center;
-  alighn-items: center;
+  align-items: center;
   width: ${props =>
     props.size === 'small'
       ? '50px'
