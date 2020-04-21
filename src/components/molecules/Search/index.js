@@ -25,7 +25,12 @@ const Search = ({ buttonSize, placeholder, value, onSearch, loader }) => {
         onChangeValue={setInputValue}
         required={true}
       />
-      <Button size={buttonSize} loader={loader} type="submit">
+      <Button
+        size={buttonSize}
+        disabled={loader}
+        type="submit"
+        disabled={loader}
+      >
         {loader ? (
           <div className="loop">
             <FaSpinner />
@@ -39,12 +44,19 @@ const Search = ({ buttonSize, placeholder, value, onSearch, loader }) => {
 };
 
 Search.defaultProps = {
-  onSearch: () => undefined,
   loader: false,
 };
 
 Search.propTypes = {
-  onSearch: PropTypes.func,
+  /**
+   * Essa propriedade é responsavel por passar a função que será executada
+   * no evento de submit do form de busca.
+   */
+  onSearch: PropTypes.func.isRequired,
+  /**
+   * Essa propriedade é responsavel por exibir o status do componente.
+   * Ela vai desabilitar o botão e o formulario
+   */
   loader: PropTypes.bool,
 };
 

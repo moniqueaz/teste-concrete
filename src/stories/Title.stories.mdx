@@ -1,5 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Title from '../components/atoms/Title';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Title" component={Title} />
 
@@ -13,18 +14,33 @@ Documentação Atom Title
   </Story>
 </Preview>
 
+<br/>
+
+### Propriedades
+
+<Props of={Title} />
+
+<br/><br/>
+
 ## Colors
 
 <Preview>
   <Story name="colors">
-    <>
+    <div style={{height: '150px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
       <Title text='Component Titulo'/>
-      <br />
-      <br />
       <Title color='#000'text='Component Titulo'/>
-      <br />
-      <br />
       <Title color='red'text='Component Titulo'/>
-    </>
+    </div>
   </Story>
 </Preview>
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Title
+    text={text('text', 'Component Titulo')}
+    color={text('color')}
+  />
+</Story>

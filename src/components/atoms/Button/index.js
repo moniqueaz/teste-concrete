@@ -9,8 +9,8 @@ const Button = ({
   size,
   type,
   bgColor,
-  loader,
   onClickButton,
+  disabled,
 }) => {
   return (
     <Component
@@ -19,7 +19,7 @@ const Button = ({
       type={type}
       bgColor={bgColor}
       onClick={() => onClickButton()}
-      loader={loader}
+      disabled={disabled}
     >
       {children}
     </Component>
@@ -32,16 +32,37 @@ Button.defaultProps = {
   size: 'normal',
   bgColor: '#ac53f2',
   onClickButton: () => undefined,
-  loader: false,
+  disabled: false,
 };
 
 Button.propTypes = {
+  /**
+   * Essa propriedade é responsavel por seta o type do button.
+   * Tipos mais comuns, `button` e `submit`.
+   */
   type: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar a cor de texto do button.
+   */
   color: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar o tamanho do button.
+   * Ela aceita parametros como `small`, `normal` e `large`.
+   */
   size: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar a cor de fundo do button.
+   */
   bgColor: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por informar qual função será chamado ao executar
+   * o evento de click do button.
+   */
   onClickButton: PropTypes.func,
-  loader: PropTypes.bool,
+  /**
+   * Essa propriedade é responsavel por setar se o button está desabilitado ou não.
+   */
+  disabled: PropTypes.bool,
 };
 
 export default Button;

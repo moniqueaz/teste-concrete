@@ -71,14 +71,14 @@ const User = ({ data }) => {
 
 User.defaultProps = {
   data: {},
-  stars: 0,
-  repositories: 0,
 };
 
 User.propTypes = {
+  /**
+   * Essa propriedade é responsavel por inserir os dados do usuario.
+   * Ela é um objeto.
+   */
   data: PropTypes.object,
-  stars: PropTypes.number,
-  repositories: PropTypes.number,
 };
 
 export default User;

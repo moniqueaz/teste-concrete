@@ -17,6 +17,10 @@ Logo.defaultProps = {
 };
 
 Logo.propTypes = {
+  /**
+   * Essa propriedade é responsavel por setar o tamanho da logo que pré definidos
+   * como `small`, `noemal` e `large`.
+   */
   size: PropTypes.string,
 };
 

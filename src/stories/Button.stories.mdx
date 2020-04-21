@@ -1,6 +1,7 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Button from '../components/atoms/Button';
 import { SearchIcon } from '../components/atoms/Icons';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Button" component={Button} />
 
@@ -14,6 +15,16 @@ Documentação Atom Button
   </Story>
 </Preview>
 
+> Exemplo do componente sem nenhuma propriedade
+
+<br/>
+
+### Propriedades
+
+<Props of={Button} />
+
+<br/><br/>
+
 ## Button with icon
 
 <Preview>
@@ -24,15 +35,23 @@ Documentação Atom Button
   </Story>
 </Preview>
 
+> O componente Button aceita receber icones no corpo do componente.
+
+<br/>
+
 ## Button colors
 
 <Preview>
-  <Story name="button color">
-    <Button color="#5c5c5c" bgColor="#ccc">
+  <Story name="button colors">
+    <Button color="#5c5c5c" bgColor="#ccc" size='large' >
       Text Color and button color
     </Button>
   </Story>
 </Preview>
+
+> O componente Button aceita receber valores para alterar a cor do texto e a cor de fundo do botão.>
+
+<br/>
 
 ## Button size
 
@@ -44,6 +63,35 @@ Documentação Atom Button
       <Button size='normal'>normal</Button>
       <br/><br/>
       <Button size='large'>large</Button>
-    </>
+    </>f
   </Story>
 </Preview>
+
+> O componente Button comporta 3 tamanhos diferentes que são setados atravez
+> da propriedade size.
+> Os valores disponiveis são `small`, `normal` e `large`.
+
+<br/>
+
+## Button loader
+
+<Preview>
+  <Story name="button disabled">
+    <Button disabled={true} >
+      Button
+    </Button>
+  </Story>
+</Preview>
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Button
+    size={text('size')}
+    color={text('color')}
+    bgColor={text('bgColor')}
+    disabled={boolean('disabled')}
+  >Playground</Button>
+</Story>

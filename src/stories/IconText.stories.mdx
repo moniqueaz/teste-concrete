@@ -1,12 +1,13 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import IconText from '../components/molecules/IconText';
 import { StarIcon } from '../components/atoms/Icons';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 <Meta title="Molecules/IconText" component={IconText} />
 
 # IconText
 
-Documentação Atom IconText
+Documentação Molecula IconText
 
 <Preview>
   <Story name="default">
@@ -16,10 +17,19 @@ Documentação Atom IconText
   </Story>
 </Preview>
 
+> O componente recebe um texto obrigatorio como parametro e pode receber um icone
+> no corpo do componente.
+
+### Propriedades
+
+<Props of={IconText} />
+
+<br/><br/>
+
 ## Align
 
 <Preview>
-  <Story name="Align">
+  <Story name="align icon">
     <>
     <IconText text="Text Component">
       <StarIcon/>
@@ -31,3 +41,19 @@ Documentação Atom IconText
     </>
   </Story>
 </Preview>
+
+> O componente IconText permite que você defina em qual lado o icone pode
+> ser posicionado.
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <IconText
+    text={text('text', 'Text Component')}
+    alignIcon={text('alignIcon')}
+  >
+    <StarIcon/>
+  </IconText>
+</Story>

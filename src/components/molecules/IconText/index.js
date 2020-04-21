@@ -18,12 +18,17 @@ const IconText = ({ children, text, alignIcon }) => {
 };
 
 IconText.defaultProps = {
-  text: '',
   alignIcon: 'left',
 };
 
 IconText.propTypes = {
-  text: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por adicionar o texto do componente.
+   */
+  text: PropTypes.string.isRequired,
+  /**
+   * Essa propriedade é responsavel por alinha o icone a `left` ou `right`
+   */
   alignIcon: PropTypes.string,
 };
 

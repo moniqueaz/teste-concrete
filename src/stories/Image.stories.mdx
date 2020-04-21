@@ -1,5 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Image from '../components/atoms/Image';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Image" component={Image} />
 
@@ -13,18 +14,38 @@ Documentação Atom Image
   </Story>
 </Preview>
 
+<br/><br/>
+
+### Propriedades
+
+<Props of={Image} />
+
+<br/><br/>
+
 ## Sizes
+
+O componente imagem aceita receber uma altura e uma largura pre definida.
 
 <Preview>
   <Story name="size">
-    <>
+    <div style={{height: '1020px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
       <Image width="160px" height="160px" src='https://via.placeholder.com/160'/>
-      <br />
-      <br />
       <Image src='https://via.placeholder.com/280'/>
-      <br />
-      <br />
       <Image width="560px" height="560px" src='https://via.placeholder.com/560'/>
-    </>
+    </div>
   </Story>
 </Preview>
+
+> É preciso definir tanto o valor quanto o tipo dele, como `px`, `em` e etc.
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Image
+    width={text('width')}
+    height={text('height')}
+    src={text('src')}
+  />
+</Story>

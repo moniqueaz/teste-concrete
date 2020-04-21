@@ -1,5 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Input from '../components/atoms/Input';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Input" component={Input} />
 
@@ -12,3 +13,67 @@ Documentação Atom Input
     <Input />
   </Story>
 </Preview>
+
+<br/>
+
+### Propriedades
+
+<Props of={Input} />
+
+<br/>
+
+## Input with type
+
+<Preview>
+  <Story name="type">
+    <Input placeholder='type password' type='password' />
+  </Story>
+</Preview>
+
+<br/>
+
+## Input with value
+
+<Preview>
+  <Story name="value">
+    <Input value='GitHub Search' />
+  </Story>
+</Preview>
+
+<br/>
+
+
+## Input with placeholder
+
+<Preview>
+  <Story name="placeholder">
+    <Input placeholder='Insira um valor aqui...' />
+  </Story>
+</Preview>
+
+<br/>
+
+## Input without border
+
+<Preview>
+  <Story name="border">
+    <Input border={false} placeholder='without border' />
+  </Story>
+</Preview>
+
+<br/>
+
+<br/>
+
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Input
+    type={text('type')}
+    placeholder={text('placeholder')}
+    border={boolean('border', true)}
+    value={text('value')}
+    required={boolean('required')}
+  />
+</Story>
