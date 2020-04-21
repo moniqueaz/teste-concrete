@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, BrowserRouter as Route, useHistory } from 'react-router-dom';
+import { FaSpinner } from 'react-icons/fa';
 import User from '../../organisms/User';
 import List from '../../organisms/List';
 import api from '../../../services/api';
 import Error404 from '../../pages/Error404';
 import Logo from '../../atoms/Logo';
 import Search from '../../molecules/Search';
-import { FaSpinner } from 'react-icons/fa';
+import GoTop from '../../molecules/GoTop';
 
 import {
   Content,
@@ -98,6 +99,9 @@ const Result = ({ match }) => {
             <SectionRight>
               <List data={reposData} />
             </SectionRight>
+            <div className="result__go-top">
+              <GoTop show={false} />
+            </div>
           </Route>
           <Route path="/error" exact>
             <Error404 />

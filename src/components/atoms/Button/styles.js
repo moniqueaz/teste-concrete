@@ -14,6 +14,7 @@ export const Component = styled.button`
   color: ${props => props.color}
   background-color: ${props => props.bgColor};
   transition: all .1s;
+  position: relative;
 
   ${props =>
     props.disabled &&
