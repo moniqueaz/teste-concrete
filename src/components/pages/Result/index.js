@@ -80,7 +80,7 @@ const Result = ({ match }) => {
       <Header>
         <Logo size="normal" />
         <div className="header__search">
-          <Search onSearch={setValue} loader={loader} />
+          <Search onSearch={setValue} loader={loader} value={value} />
         </div>
       </Header>
       <Content>
