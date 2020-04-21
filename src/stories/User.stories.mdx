@@ -1,5 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import User from '../components/organisms/User';
+import { withKnobs, object } from '@storybook/addon-knobs';
 
 <Meta title="Organisms/User" component={User} />
 
@@ -46,7 +47,42 @@ Documentação Atom User
         following: 3,
         created_at: '2014-08-07T13:23:37Z',
         updated_at: '2020-04-17T23:16:44Z',
+        stars: '20',
+        repositories: '40',
       }}
     />
   </Story>
 </Preview>
+
+### Campos esperados no data
+
+
+| Campo         | Tipo      |
+| ------------- |:---------:|
+| avatar_url    | string    |
+| followers     | number    |
+| name          | string    |
+| location      | string    |
+| login         | string    |
+| company       | string    |
+| stars         | number    |
+| Repositories  | number    |
+
+
+<br/>
+
+### Playground
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <User
+    data={object('data', {
+        login: 'moniqueaz',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/8385229?v=4',
+        url: 'https://api.github.com/users/moniqueaz',
+        name: 'Monique Az',
+        company: 'The Galactic Empire',
+        followers: 11,
+        stars: '20',
+        repositories: '40',
+      })}
+  />
+</Story>
