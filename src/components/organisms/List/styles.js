@@ -28,8 +28,7 @@ export const WrapperStyle = styled.div`
         margin-top: 30px;
       }
       & + button {
-        margin-top: 40px;
-        margin: 0 auto;
+        margin: 40px auto 0 auto;
       }
     }
   }

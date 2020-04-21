@@ -22,6 +22,7 @@ Title.defaultProps = {
   tag: 'h2',
   color: '#ac53f2',
   link: '',
+  text: '',
 };
 
 Title.propTypes = {
@@ -33,7 +34,7 @@ Title.propTypes = {
   /**
    * Essa propriedade é responsavel por definir o texto que será exibito no titulo.
    */
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   /**
    * Essa pripriedade é responsavel por definir a cor do titulo.
    */
