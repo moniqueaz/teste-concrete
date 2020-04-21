@@ -48,6 +48,9 @@ List.defaultProps = {
 };
 
 List.propTypes = {
+  /**
+   * Essa propriedade é responsavel por exibir o retorno dos dados da api.
+   */
   data: PropTypes.array,
 };
 
