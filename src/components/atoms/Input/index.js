@@ -50,6 +50,7 @@ const Input = ({
         border={border}
         onChange={e => handleChange(e.target.value)}
         required={required}
+        clear={clear}
       />
     </InputWrapper>
   );

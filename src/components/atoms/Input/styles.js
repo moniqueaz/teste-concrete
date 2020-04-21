@@ -6,6 +6,7 @@ export const Component = styled.input`
   width: 100%;
   height: 50px;
   padding: 10px;
+  padding-right: ${props => (props.clear ? '50px' : '10px')};
 
   &::placeholder {
     color: #ccc;
