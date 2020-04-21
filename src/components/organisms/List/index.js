@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import Title from '../../atoms/Title';
 import IconText from '../../molecules/IconText';
 import { StarIcon } from '../../atoms/Icons';
+import { FaGithubAlt } from 'react-icons/fa';
 
-import { WrapperStyle, Block, Item, Text, Star } from './styles';
+// github-alt
+
+import { WrapperStyle, Block, Item, Text, Star, Empty } from './styles';
 
 const List = ({ data }) => {
   const ajustTex = text => {
@@ -36,7 +39,10 @@ const List = ({ data }) => {
             );
           })
         ) : (
-          <div>Empty</div>
+          <Empty>
+            <FaGithubAlt />
+            <Title text="This repository is empty." color="#5c5c5c" />
+          </Empty>
         )}
       </Block>
     </WrapperStyle>
