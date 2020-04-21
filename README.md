@@ -4,7 +4,7 @@ Github Search é uma aplicação que busca repositorios atravez do seu user name
 
 Clique [aqui](https://github-search-teste.herokuapp.com/) para testar.
 
-<img src='' width='70%'/>
+<img src='https://github.com/moniqueaz/teste-concrete/blob/master/images/githubsearch.jpeg' width='70%'/>
 
 `Tela inicial`
 
@@ -29,7 +29,7 @@ observar e testar todas as possibilidades dos componentes.
 Para rodar o storybook execute `yarn storybook` ou `npm run storybook`. Por padrão ele irá startar os stories
 no seu navegador padrão na porta :9009
 
-<img src='' width='70%'/>
+<img src='https://github.com/moniqueaz/teste-concrete/blob/master/images/storybook.jpeg' width='70%'/>
 
 ## Buscar
 
