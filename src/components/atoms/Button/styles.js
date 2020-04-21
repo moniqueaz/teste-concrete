@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Component = styled.button`
   display: flex;
@@ -14,6 +14,13 @@ export const Component = styled.button`
   color: ${props => props.color}
   background-color: ${props => props.bgColor};
   transition: all .1s;
+
+  ${props =>
+    props.disabled &&
+    css`
+      background-color: #5c5c5c;
+      pointer-events: none;
+    `}
 
   &:active{
     opacity: .8;

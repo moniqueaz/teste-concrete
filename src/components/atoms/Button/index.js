@@ -11,6 +11,7 @@ const Button = ({
   bgColor,
   loader,
   onClickButton,
+  disabled,
 }) => {
   return (
     <Component
@@ -20,6 +21,7 @@ const Button = ({
       bgColor={bgColor}
       onClick={() => onClickButton()}
       loader={loader}
+      disabled={disabled}
     >
       {children}
     </Component>
@@ -33,6 +35,7 @@ Button.defaultProps = {
   bgColor: '#ac53f2',
   // onClickButton: () => undefined,
   loader: false,
+  disabled: false,
 };
 
 Button.propTypes = {
@@ -63,6 +66,10 @@ Button.propTypes = {
    * Essa propriedade é responsavel por setar o status de carregando do button.
    */
   loader: PropTypes.bool,
+  /**
+   * Essa propriedade é responsavel por setar se o button está desabilitado ou não.
+   */
+  disabled: PropTypes.bool,
 };
 
 export default Button;

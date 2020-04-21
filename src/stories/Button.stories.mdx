@@ -73,11 +73,24 @@ Documentação Atom Button
 
 <br/>
 
+## Button loader
+
+<Preview>
+  <Story name="button loader">
+    <Button loader={true} >
+      Button
+    </Button>
+  </Story>
+</Preview>
+
+<br/>
+
 ### Playground
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
   <Button
     size={text('size')}
     color={text('color')}
     bgColor={text('bgColor')}
+    loader={boolean('loader')}
   >Playground</Button>
 </Story>
