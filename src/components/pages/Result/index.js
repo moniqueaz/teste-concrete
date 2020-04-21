@@ -6,6 +6,7 @@ import api from '../../../services/api';
 import Error404 from '../../pages/Error404';
 import Logo from '../../atoms/Logo';
 import Search from '../../molecules/Search';
+import { FaSpinner } from 'react-icons/fa';
 
 import {
   Content,
@@ -13,6 +14,7 @@ import {
   SectionRight,
   Header,
   Container,
+  Loader,
 } from './styles';
 
 const Result = ({ match }) => {
@@ -56,7 +58,9 @@ const Result = ({ match }) => {
         repositories: reposInfor.data.length,
       });
       setLoader(false);
+      location.push(`/user/${name}/repos`);
     } catch (error) {
+      setLoader(false);
       location.push(`/error`);
     }
   };
@@ -67,11 +71,7 @@ const Result = ({ match }) => {
   }, [value]);
 
   useEffect(() => {
-    if (!loader) {
-      location.push(`/user/${value}/repos`);
-    } else {
-      location.push(`/user/${value}`);
-    }
+    loader && location.push(`/user/${value}`);
   }, [loader]);
 
   return (
@@ -85,7 +85,11 @@ const Result = ({ match }) => {
       <Content>
         <Switch>
           <Route path="/user/:user" exact>
-            Loading...
+            <Loader>
+              <div className="loop">
+                <FaSpinner />
+              </div>
+            </Loader>
           </Route>
           <Route path="/user/:user/repos">
             <SectionLeft>

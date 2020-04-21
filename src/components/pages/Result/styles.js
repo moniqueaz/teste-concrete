@@ -55,3 +55,22 @@ export const Container = styled.div`
     padding: 35px 25px 0;
   }
 `;
+
+export const Loader = styled.div`
+  width: 100%;
+  height: calc(100vh - 300px);
+  position: relative;
+
+  .loop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
+
+    svg {
+      width: 35px;
+      height: 35px;
+      opacity: 0.8;
+    }
+  }
+`;
