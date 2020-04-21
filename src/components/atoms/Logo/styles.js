@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Link = styled.a`
   font-style: italic;
   font-weight: 300;
   line-height: 81px;
+  text-decoration: none;
+  color: #000;
   font-size: ${props =>
     props.size === 'large'
       ? '40px'

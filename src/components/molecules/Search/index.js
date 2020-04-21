@@ -24,6 +24,7 @@ const Search = ({ buttonSize, placeholder, value, onSearch, loader }) => {
         border={false}
         onChangeValue={setInputValue}
         required={true}
+        clear={true}
       />
       <Button
         size={buttonSize}
