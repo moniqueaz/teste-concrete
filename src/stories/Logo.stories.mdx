@@ -1,5 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Logo from '../components/atoms/Logo';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Logo" component={Logo} />
 
@@ -15,16 +16,32 @@ Documentação Atom Logo
   </Story>
 </Preview>
 
+<br/>
+
+### Propriedades
+
+<Props of={Logo} />
+
+<br/>
+
 ## Logo sizes
 
 <Preview>
   <Story name="sizes">
     <>
       <Logo size='small'/>
-      <br/><br/>
       <Logo size='normal'/>
-      <br/><br/>
       <Logo size='large'/>
     </>
   </Story>
 </Preview>
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Logo
+    size={text('size')}
+  />
+</Story>
