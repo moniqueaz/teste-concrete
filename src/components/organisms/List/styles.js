@@ -27,6 +27,10 @@ export const WrapperStyle = styled.div`
       & + li {
         margin-top: 30px;
       }
+      & + button {
+        margin-top: 40px;
+        margin: 0 auto;
+      }
     }
   }
 `;

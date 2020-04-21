@@ -14,7 +14,7 @@ const List = ({ data }) => {
   const [list, setList] = useState(data);
   const [page, setPage] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(false);
-  const groupBy = 5;
+  const groupBy = 10;
   const [itemsLength, setItemsLength] = useState(groupBy);
 
   const handleLoadMore = () => {
