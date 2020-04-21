@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import IconText from '../components/molecules/IconText';
 import { StarIcon } from '../components/atoms/Icons';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 <Meta title="Molecules/IconText" component={IconText} />
 
@@ -48,6 +48,7 @@ Documentação Molecula IconText
 <br/>
 
 ### Playground
+
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
   <IconText
     text={text('text', 'Text Component')}

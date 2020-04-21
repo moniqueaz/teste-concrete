@@ -1,6 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Input from '../components/atoms/Input';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Input" component={Input} />
 
@@ -67,6 +67,7 @@ Documentação Atom Input
 
 
 ### Playground
+
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
   <Input
     type={text('type')}

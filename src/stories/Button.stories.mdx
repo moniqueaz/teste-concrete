@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Button from '../components/atoms/Button';
 import { SearchIcon } from '../components/atoms/Icons';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Button" component={Button} />
 
@@ -86,6 +86,7 @@ Documentação Atom Button
 <br/>
 
 ### Playground
+
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
   <Button
     size={text('size')}

@@ -1,6 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Image from '../components/atoms/Image';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 
 <Meta title="Atoms/Image" component={Image} />
 
@@ -41,6 +41,7 @@ O componente imagem aceita receber uma altura e uma largura pre definida.
 <br/>
 
 ### Playground
+
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
   <Image
     width={text('width')}

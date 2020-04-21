@@ -1,6 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import List from '../components/organisms/List';
-import { withKnobs, object, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, object } from '@storybook/addon-knobs';
 
 <Meta title="Organisms/List" component={List} />
 
@@ -430,7 +430,20 @@ Documentação Organisms List
 
 <br/>
 
+### Campos esperados no data
+
+| Campo             | Tipo      |
+| ----------------- |:---------:|
+| name              | string    |
+| html_url          | string    |
+| description       | string    |
+| stargazers_count  | number    |
+| node_id           | string    |
+
+<br/>
+
 ### Playground
+
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
     <List
     data={object('data', [

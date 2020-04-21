@@ -1,6 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Search from '../components/molecules/Search';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 <Meta title="Molecules/Search" component={Search} />
 
@@ -35,6 +35,7 @@ Documentação Atom Search
 <br/>
 
 ### Playground
+
 <Story name="knobs" parameters={{ decorators: [withKnobs] }}>
   <Search
     loader={boolean('loader')}
