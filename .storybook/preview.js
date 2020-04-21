@@ -1,6 +1,7 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import GlobalStyle from '../src/styles/global';
+import { withInfo } from '@storybook/addon-info';
 // import { configureViewport } from '@storybook/addon-viewport';
 
 const newViewports = {
@@ -48,7 +49,7 @@ addParameters({
     viewports: newViewports,
   },
 });
-
+addDecorator(withInfo);
 addDecorator(story => (
   <>
     <Container>

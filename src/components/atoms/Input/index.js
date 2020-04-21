@@ -43,11 +43,30 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
+  /**
+   * Essa propriedade é responsavel por definir o atributo type do imput.
+   */
   type: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por definir o value do input.
+   */
   value: PropTypes.string,
+  /**
+   * Essa prorpiedade é responsavel por definir o placeholder do input.
+   */
   placeholder: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por definir se haverá ou não bordar no input.
+   */
   border: PropTypes.bool,
+  /**
+   * Essa propriedade é responsavel por passar a função que será chamada no evento
+   * change do input.
+   */
   onChangeValue: PropTypes.func,
+  /**
+   * Essa propriedade é responsavel por definir se o input é required ou não.
+   */
   required: PropTypes.bool,
 };
 

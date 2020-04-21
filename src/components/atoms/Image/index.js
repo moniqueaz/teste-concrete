@@ -19,9 +19,21 @@ Image.defaultProps = {
 };
 
 Image.propTypes = {
+  /**
+   * Essa propriedade é responsavel por passar o src da imagem.
+   */
   src: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por atribuir o alt da imagem.
+   */
   alt: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar a largura da imagem
+   */
   width: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por setar a altura da imagem
+   */
   height: PropTypes.string,
 };
 

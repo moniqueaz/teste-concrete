@@ -1,5 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Search from '../components/molecules/Search';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 <Meta title="Molecules/Search" component={Search} />
 
@@ -12,3 +13,31 @@ Documentação Atom Search
     <Search />
   </Story>
 </Preview>
+
+<br/>
+
+## Loader
+
+<Preview>
+  <Story name="loader">
+    <Search loader={true}/>
+  </Story>
+</Preview>
+
+> É possivel fazer com que o search informe o carregamento atravez do loader.
+
+<br/>
+
+### Propriedades
+
+<Props of={Search} />
+
+<br/>
+
+### Playground
+
+<Story name="knobs" parameters={{ decorators: [withKnobs] }}>
+  <Search
+    loader={boolean('loader')}
+  />
+</Story>

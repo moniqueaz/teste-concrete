@@ -23,18 +23,83 @@ Documentação Atom Icon
 
 <Preview>
   <Story name="all">
-    <>
+    <div style={{width: '500px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
     <SearchIcon/>
-    <br/><br/>
     <StarIcon/>
-    <br/><br/>
     <FollowersIcon/>
-    <br/><br/>
     <LocationIcon/>
-    <br/><br/>
     <OrganizationIcon/>
-    <br/><br/>
     <RepositorieIcon/>
-    </>
+    </div>
   </Story>
 </Preview>
+
+## Como usar
+
+Para utilizar os icones basta importa o componente Icons passando o icone desejado
+
+Exemplo
+
+```javascript
+import { SearchIcon } from './components/atoms/Icons';
+
+const ButtonSerach = () => {
+  return (
+    <button>
+      <SearchIcon/>
+    </button>
+  );
+};
+
+```
+
+
+### SearchIcon
+
+<Preview>
+  <Story name="searchIcon">
+    <SearchIcon/>
+  </Story>
+</Preview>
+
+### StarIcon
+
+<Preview>
+  <Story name="starIcon">
+    <StarIcon/>
+  </Story>
+</Preview>
+
+### FollowersIcon
+
+<Preview>
+  <Story name="followersIcon">
+    <FollowersIcon/>
+  </Story>
+</Preview>
+
+### LocationIcon
+
+<Preview>
+  <Story name="locationIcon">
+    <LocationIcon/>
+  </Story>
+</Preview>
+
+### OrganizationIcon
+
+<Preview>
+  <Story name="organizationIcon">
+    <OrganizationIcon/>
+  </Story>
+</Preview>
+
+### RepositorieIcon
+
+<Preview>
+  <Story name="repositorieIcon">
+    <RepositorieIcon/>
+  </Story>
+</Preview>
+
+

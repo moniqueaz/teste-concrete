@@ -20,15 +20,27 @@ const Title = ({ tag, text, color, link }) => {
 
 Title.defaultProps = {
   tag: 'h2',
-  text: '',
   color: '#ac53f2',
   link: '',
 };
 
 Title.propTypes = {
+  /**
+   * Essa propriedade é responsavel por definir a tag do titulo. Ela possui uma
+   * responsabilidade semantica pois não afeta o visual do componente.
+   */
   tag: PropTypes.string,
-  text: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por definir o texto que será exibito no titulo.
+   */
+  text: PropTypes.string.isRequired,
+  /**
+   * Essa pripriedade é responsavel por definir a cor do titulo.
+   */
   color: PropTypes.string,
+  /**
+   * Essa propriedade é responsavel por inserir um link ao titulo caso ele possua.
+   */
   link: PropTypes.string,
 };
 
