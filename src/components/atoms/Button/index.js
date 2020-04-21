@@ -31,7 +31,7 @@ Button.defaultProps = {
   color: '#fff',
   size: 'normal',
   bgColor: '#ac53f2',
-  // onClickButton: () => undefined,
+  onClickButton: () => undefined,
   disabled: false,
 };
 
@@ -58,7 +58,7 @@ Button.propTypes = {
    * Essa propriedade é responsavel por informar qual função será chamado ao executar
    * o evento de click do button.
    */
-  onClickButton: PropTypes.func.isRequired,
+  onClickButton: PropTypes.func,
   /**
    * Essa propriedade é responsavel por setar se o button está desabilitado ou não.
    */
