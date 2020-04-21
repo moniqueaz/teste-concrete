@@ -28,18 +28,3 @@ export const InputWrapper = styled.div`
     }
   }
 `;
-
-// export const Button = styled.button`
-// position: absolute;
-// right: 20px;
-// top: 50%;
-// transform: translateY(-50%);
-// background-color: white;
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// color: #5c5c5c;
-// opacity: 0.4;
-// svg {
-// }
-// `;
