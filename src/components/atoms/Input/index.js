@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { FaTimes } from 'react-icons/fa';
+import Button from '../Button';
 
-import { Component } from './styles';
+import { Component, InputWrapper } from './styles';
 
 const Input = ({
   type,
@@ -10,6 +12,7 @@ const Input = ({
   border,
   onChangeValue,
   required,
+  clear,
 }) => {
   const [val, setVal] = useState(value);
 
@@ -17,19 +20,39 @@ const Input = ({
     setVal(input);
   };
 
+  const clearInput = () => {
+    setVal('');
+  };
+
   useEffect(() => {
     onChangeValue(val);
   }, [val]);
 
   return (
-    <Component
-      value={val}
-      type={type}
-      placeholder={placeholder}
-      border={border}
-      onChange={e => handleChange(e.target.value)}
-      required={required}
-    />
+    <InputWrapper>
+      {clear && (
+        <div className="input__button--close">
+          <Button
+            type="button"
+            bgColor="#fff"
+            color="#5c5c5c"
+            size="small"
+            onClickButton={() => clearInput()}
+          >
+            <FaTimes />
+          </Button>
+        </div>
+      )}
+      <Component
+        value={val}
+        type={type}
+        placeholder={placeholder}
+        border={border}
+        onChange={e => handleChange(e.target.value)}
+        required={required}
+        clear={clear}
+      />
+    </InputWrapper>
   );
 };
 
@@ -40,6 +63,7 @@ Input.defaultProps = {
   border: true,
   onChangeValue: () => undefined,
   required: false,
+  clear: false,
 };
 
 Input.propTypes = {
@@ -68,6 +92,10 @@ Input.propTypes = {
    * Essa propriedade é responsavel por definir se o input é required ou não.
    */
   required: PropTypes.bool,
+  /**
+   * Essa propriedade é responsavel por inserir o botão para limpar o campo input
+   */
+  clear: PropTypes.bool,
 };
 
 export default Input;
